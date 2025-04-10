@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            
+            styleClass="root"
+            prefWidth="600" prefHeight="400">
+
+    <!-- Barra superior -->
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+            <Label text="Perfiles" styleClass="profiles-title" HBox.hgrow="ALWAYS"/>
+            <HBox styleClass="logo-box" alignment="CENTER">
+                <Label text="Swarmy" styleClass="swarmy-label"/>
+            </HBox>
+            <Button text="←" styleClass="back-button" />
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- Contenido central - perfiles -->
+    <center>
+        <StackPane alignment="CENTER">
+            <FlowPane alignment="CENTER" hgap="20" vgap="20" styleClass="profiles-container">
+                <!-- Perfil del tutor -->
+                <VBox alignment="CENTER" spacing="10" styleClass="profile-box" >
+                    <StackPane styleClass="profile-icon-container">
+                        <StackPane styleClass="profile-icon"/>
+                    </StackPane>
+                    <Label text="Usuario Tutor" styleClass="profile-name"/>
+                </VBox>
+                
+                <!-- Perfil del niño -->
+                <VBox alignment="CENTER" spacing="10" styleClass="profile-box" >
+                    <StackPane styleClass="profile-icon-container">
+                        <StackPane styleClass="profile-icon"/>
+                    </StackPane>
+                    <Label text="Usuario Niño" styleClass="profile-name"/>
+                </VBox>
+                
+                <!-- Botón agregar -->
+                <VBox alignment="CENTER" spacing="10" styleClass="profile-box">
+                    <StackPane styleClass="add-button">
+                        <Circle radius="40" styleClass="add-circle"/>
+                        <Label text="+" styleClass="plus-label"/>
+                    </StackPane>
+                    <Label text="Agregar" styleClass="profile-name"/>
+                </VBox>
+            </FlowPane>
+        </StackPane>
+    </center>
+</BorderPane>

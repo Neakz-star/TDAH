@@ -1,0 +1,93 @@
+.root {
+    -fx-background-color: #45C6D3;
+    -fx-font-family: "Arial";
+}
+
+.top-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px;
+    -fx-spacing: 15px;
+}
+
+.profiles-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 10px;
+}
+
+.logo-box {
+    -fx-background-color: black;
+    -fx-background-radius: 15px;
+    -fx-padding: 8px 15px;
+}
+
+.swarmy-label {
+    -fx-text-fill: #FFFF00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.back-button {
+    -fx-background-color: #D35D74;
+    -fx-background-radius: 15px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+}
+
+.profiles-container {
+    -fx-padding: 50px 20px 20px 20px;
+    -fx-alignment: center;
+}
+
+.profile-box {
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+    -fx-max-width: 160px;
+    -fx-min-height: 140px;
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+
+.profile-icon-container {
+    -fx-background-color: #E5E5E5;
+    -fx-background-radius: 10px;
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-max-width: 100px;
+    -fx-max-height: 100px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+.profile-icon {
+    -fx-background-image: url("../images/profile-placeholder.png");
+    -fx-background-size: 60px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.profile-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.add-button {
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-max-width: 100px; 
+    -fx-max-height: 100px;
+    -fx-cursor: hand;
+}
+
+.add-circle {
+    -fx-fill: #1D5B58;
+}
+
+.plus-label {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
