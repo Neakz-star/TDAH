@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- VBox para el título "Registro" -->
+      <VBox alignment="CENTER" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="¡Bienvenido!" />
+         </children>
+      </VBox>
+
+      <!-- VBox para los demás elementos -->
+      <VBox alignment="CENTER" layoutY="95.0" prefHeight="411.0" prefWidth="600.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <children>
+            <!-- Campo: Número de Teléfono -->
+            <Label prefHeight="18.0" prefWidth="303.0" text="Número de teléfono" />
+            <TextField maxWidth="300.0" prefWidth="300.0" promptText="A 10 digitos" />
+
+            <!-- Campo: Contraseña -->
+            <Label prefHeight="18.0" prefWidth="299.0" text="Crea una contraseña" />
+            <PasswordField maxWidth="300.0" prefWidth="300.0" promptText="Ingrese su contraseña" />
+
+            <!-- Botón de Finalizar -->
+            <Button prefWidth="150.0" text="Iniciar sesión" />
+            <Label text="¿No tienes cuenta?" />
+            <Button mnemonicParsing="false" text="Crea una cuenta" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
