@@ -9,6 +9,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.event.Event;
+import java.net.URL;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -84,8 +87,6 @@ public class Controllers {
         String telefono = log_numeroTelefono.getText().trim();
         String pass = log_contraseña.getText().trim();
 
-    
-
         // Validar que los campos no estén vacíos
         if (telefono.isEmpty() || pass.isEmpty()) {
             mostrarAlerta("Error", "Todos los campos son obligatorios.");
@@ -120,6 +121,29 @@ public class Controllers {
         // Verificar si se encontró la cuenta
         if (cuentaEncontrada != null) {
             mostrarAlerta("Éxito", "Inicio de sesión exitoso. Bienvenido, " + cuentaEncontrada.getNombre() + "!");
+            
+            // Navegar a la pantalla de perfiles
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("Perfiles.fxml"));
+                Stage stage = (Stage) log_numeroTelefono.getScene().getWindow();
+                Scene scene = new Scene(root);
+                
+                // Agregar el CSS a la nueva escena
+                String css = getClass().getResource("application.css").toExternalForm();
+                scene.getStylesheets().add(css);
+
+                stage.setScene(scene);
+                
+                // Ajustar el tamaño de la ventana
+                stage.setWidth(javafx.stage.Screen.getPrimary().getBounds().getWidth());
+                stage.setHeight(javafx.stage.Screen.getPrimary().getBounds().getHeight());
+                stage.setMaximized(true);
+                
+                stage.show();
+            } catch (IOException e) {
+                System.out.println("Error al cargar Perfiles.fxml: " + e.getMessage());
+                e.printStackTrace();
+            }
         } else {
             mostrarAlerta("Error", "Credenciales incorrectas. Verifica tu número de teléfono y contraseña.");
         }
@@ -178,6 +202,61 @@ public class Controllers {
         } catch (IOException e) {
             System.out.println("Error al cargar Main.fxml: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void irAPerfilNiño(Event event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Menuniño.fxml"));
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            
+            // Add CSS
+            scene.getStylesheets().addAll(
+                getClass().getResource("application.css").toExternalForm()
+            );
+
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error loading Menuniño.fxml: " + e.getMessage());
+            mostrarAlerta("Error", "No se pudo cargar el perfil del niño.");
+        }
+    }
+
+    @FXML
+    private void irATienda(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Tienda.fxml"));
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            
+            // Add only the main CSS file first
+            String mainCss = getClass().getResource("application.css").toExternalForm();
+            scene.getStylesheets().add(mainCss);
+            
+            // Try to add tienda.css if it exists
+            URL tiendaCssUrl = getClass().getResource("tienda.css");
+            if (tiendaCssUrl != null) {
+                scene.getStylesheets().add(tiendaCssUrl.toExternalForm());
+            } else {
+                System.out.println("Warning: tienda.css not found");
+            }
+
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Error al cargar Tienda.fxml: " + e.getMessage());
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo cargar la tienda.");
+        } catch (Exception e) {
+            System.out.println("Error inesperado: " + e.getMessage());
+            e.printStackTrace();
+            mostrarAlerta("Error", "Ocurrió un error inesperado.");
         }
     }
 
