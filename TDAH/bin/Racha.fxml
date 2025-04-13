@@ -6,181 +6,93 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <!-- Sección superior - Contador de racha -->
-      <VBox style="-fx-background-color: #FFDE0A;" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <StackPane alignment="CENTER">
-               <children>
-                  <!-- Botón de retroceso -->
-                  <Button styleClass="back-button" text="" StackPane.alignment="CENTER_LEFT">
-                     <graphic>
-                        <Region styleClass="arrow-icon" />
-                     </graphic>
-                     <StackPane.margin>
-                        <Insets left="10.0" />
-                     </StackPane.margin>
-                  </Button>
-                  
-                  <!-- Contador de racha y días de la semana -->
-                  <HBox alignment="CENTER" styleClass="streak-container">
-                     <children>
-                        <VBox alignment="CENTER" spacing="3.0">
-                           <children>
-                              <Label styleClass="streak-number" text="10" />
-                              <Label styleClass="streak-label" text="Días de&#10;Racha" textAlignment="CENTER" />
-                           </children>
-                           <padding>
-                              <Insets left="20.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        
-                        <!-- Días de la semana -->
-                        <HBox alignment="CENTER" spacing="10.0" styleClass="days-container">
-                           <children>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-completed" />
-                                    <Label styleClass="day-label" text="Lu" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-completed" />
-                                    <Label styleClass="day-label" text="Ma" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-completed" />
-                                    <Label styleClass="day-label" text="Mi" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-current" />
-                                    <Label styleClass="day-label" text="Ju" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-pending" />
-                                    <Label styleClass="day-label" text="Vi" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-pending" />
-                                    <Label styleClass="day-label" text="Sa" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER">
-                                 <children>
-                                    <Circle radius="10" styleClass="day-pending" />
-                                    <Label styleClass="day-label" text="Do" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets right="10.0" />
-                           </padding>
-                        </HBox>
-                        
-                        <!-- Icono de fuego -->
-                        <StackPane styleClass="fire-icon-container">
-                           <padding>
-                              <Insets right="20.0" />
-                           </padding>
-                        </StackPane>
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" top="10.0" />
-               </padding>
-            </StackPane>
-         </children>
-      </VBox>
-      
-      <!-- Sección inferior - Contenido principal -->
-      <HBox alignment="CENTER" AnchorPane.topAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" style="-fx-background-color: #FFDE0A;">
-         <children>
-            <!-- Panel izquierdo - Desbloquear racha -->
-            <VBox alignment="CENTER" styleClass="unlock-container" HBox.hgrow="ALWAYS">
-               <children>
-                  <Label styleClass="unlock-title" text="30 DÍAS DE RACHA PARA DESBLOQUEAR" textAlignment="CENTER" wrapText="true" />
-                  <Separator styleClass="unlock-separator" />
-                  <StackPane styleClass="lock-container">
-                     <children>
-                        <Region styleClass="lock-icon" />
-                     </children>
-                  </StackPane>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
+<AnchorPane styleClass="streak-background" xmlns="http://javafx.com/javafx/21.0.6" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers">
+    <children>
+        <!-- Main Container -->
+        <VBox spacing="30" AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
             
-            <!-- Panel derecho - Calendario -->
-            <VBox alignment="CENTER" styleClass="calendar-container" HBox.hgrow="ALWAYS">
-               <children>
-                  <!-- Encabezado del calendario -->
-                  <HBox alignment="CENTER" styleClass="calendar-header">
-                     <children>
-                        <Button styleClass="month-nav-button" text="&lt;" />
-                        <Label styleClass="month-label" text="MES" HBox.hgrow="ALWAYS" />
-                        <Button styleClass="month-nav-button" text="&gt;" />
-                     </children>
-                  </HBox>
-                  
-                  <!-- Grilla del calendario -->
-                  <GridPane styleClass="calendar-grid" hgap="5.0" vgap="5.0">
-                     <!-- Las columnas y filas se definen mediante código CSS -->
-                     <children>
-                        <!-- Primera fila (7 círculos) -->
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-                        
-                        <!-- Segunda fila (7 círculos) -->
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-completed" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-current" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                        
-                        <!-- Tercera fila (7 círculos) -->
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                        
-                        <!-- Cuarta fila (7 círculos) -->
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                        <Circle radius="15" styleClass="day-pending" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                     </children>
-                  </GridPane>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
-         </children>
-      </HBox>
-   </children>
+            <!-- Top Streak Card -->
+            <HBox styleClass="streak-card" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="30" bottom="20" left="30"/>
+                </padding>
+                <children>
+                    <!-- Back Button -->
+                    <Button mnemonicParsing="false" onAction="#irAMenuNiño" 
+                            styleClass="back-button" text="←"/>
+                    
+                    <!-- Streak Info -->
+                    <VBox alignment="CENTER" styleClass="streak-info">
+                        <Label fx:id="streakNumber" styleClass="streak-number" text="10"/>
+                        <Label text="Días de Racha" styleClass="streak-subtitle"/>
+                    </VBox>
+                    
+                    <!-- Week Progress -->
+                    <HBox styleClass="week-progress" alignment="CENTER" spacing="15">
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, completed"/>
+                            <Label text="Lu" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, completed"/>
+                            <Label text="Ma" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, current"/>
+                            <Label text="Mi" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, pending"/>
+                            <Label text="Ju" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, pending"/>
+                            <Label text="Vi" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, pending"/>
+                            <Label text="Sa" styleClass="day-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="day-item">
+                            <Circle radius="10" styleClass="day-circle, pending"/>
+                            <Label text="Do" styleClass="day-label"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Flame Icon -->
+                    <Label text="🔥" styleClass="flame-icon"/>
+                </children>
+            </HBox>
+            
+            <!-- Bottom Content -->
+            <HBox spacing="30" VBox.vgrow="ALWAYS">
+                <!-- Achievement Container -->
+                <VBox styleClass="achievement-container" HBox.hgrow="ALWAYS">
+                    <Label text="30 DÍAS DE RACHA&#10;PARA DESBLOQUEAR" 
+                           styleClass="achievement-title" textAlignment="CENTER"/>
+                    <StackPane styleClass="lock-container" VBox.vgrow="ALWAYS">
+                        <Label text="🔒" styleClass="lock-icon"/>
+                    </StackPane>
+                </VBox>
+                
+                <!-- Calendar Container -->
+                <VBox styleClass="calendar-container" HBox.hgrow="ALWAYS">
+                    <!-- Month Navigation -->
+                    <HBox alignment="CENTER" styleClass="month-nav">
+                        <Button text="‹" styleClass="month-button"/>
+                        <Label text="MES" styleClass="month-label"/>
+                        <Button text="›" styleClass="month-button"/>
+                    </HBox>
+                    
+                    <!-- Calendar Grid -->
+                    <GridPane fx:id="calendarGrid" styleClass="calendar-grid" 
+                             hgap="8" vgap="8" alignment="CENTER">
+                        <!-- Calendar dots will be added programmatically -->
+                    </GridPane>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
 </AnchorPane>
