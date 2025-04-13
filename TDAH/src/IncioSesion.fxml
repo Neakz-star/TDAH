@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+            prefHeight="700.0" prefWidth="900.0" styleClass="main-background" 
+            xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers">
+    <StackPane AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" 
+               AnchorPane.bottomAnchor="50.0">
+        <children>
+            <!-- Fondo del formulario con sombra -->
+            <Rectangle styleClass="form-background" width="500" height="580" arcWidth="30" arcHeight="30"/>
+            
+            <!-- Contenido del formulario -->
+            <VBox alignment="TOP_CENTER" spacing="25" styleClass="form-container">
+                <padding>
+                    <Insets top="40" right="60" bottom="40" left="60"/>
+                </padding>
+                <children>
+                    <!-- Título con más espacio abajo -->
+                    <Label text="¡Bienvenido!" styleClass="form-title">
+                        <VBox.margin>
+                            <Insets bottom="40"/>
+                        </VBox.margin>
+                    </Label>
+                    
+                    <!-- Campos -->
+                    <VBox spacing="5" maxWidth="350">
+                        <Label text="Número de teléfono" styleClass="form-label"/>
+                        <TextField fx:id="log_numeroTelefono" styleClass="form-input" 
+                                 promptText="A 10 dígitos"/>
+                    </VBox>
+                    
+                    <VBox spacing="5" maxWidth="350">
+                        <Label text="Contraseña" styleClass="form-label"/>
+                        <PasswordField fx:id="log_contraseña" styleClass="form-input" 
+                                     promptText="Ingrese su contraseña"/>
+                        <VBox.margin>
+                            <Insets bottom="20"/>
+                        </VBox.margin>
+                    </VBox>
+                    
+                    <!-- Botón con más espacio arriba -->
+                    <Button fx:id="btnIniciarsesion" text="Iniciar sesión" 
+                            styleClass="form-button" onAction="#iniciarSesion">
+                        <VBox.margin>
+                            <Insets top="20"/>
+                        </VBox.margin>
+                    </Button>
+                    
+                    <!-- Link a registro -->
+                    <VBox alignment="CENTER" spacing="5">
+                        <VBox.margin>
+                            <Insets top="20"/>
+                        </VBox.margin>
+                        <Label text="¿No tienes cuenta?" styleClass="form-text"/>
+                        <Button fx:id="btnirRegistro" text="Crea una cuenta" 
+                                styleClass="form-link-button" onAction="#irARegistro"/>
+                    </VBox>
+                </children>
+            </VBox>
+        </children>
+    </StackPane>
+</AnchorPane>

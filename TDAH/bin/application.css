@@ -1,0 +1,467 @@
+/* Variables de colores */
+* {
+    -primary-color: #40bcd8;
+    -secondary-color: #248eb2;
+    -accent-color: #b25900;
+    -danger-color: #d93442;
+    -success-color: #1a7a3e;
+    -selected-color: #0e4259;
+    -text-light: white;
+    -text-dark: #333333;
+    -coin-color: #ffd700;
+}
+
+.background {
+    -fx-background-color: -primary-color;
+}
+
+.header {
+    -fx-background-color: #00a2ff;
+}
+
+.title-label {
+    -fx-background-color: -accent-color;
+    -fx-text-fill: -text-light;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+.back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.back-button:hover {
+    -fx-text-fill: #ff4757;
+}
+
+.coins-container {
+    -fx-background-color: -secondary-color;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 20px;
+    -fx-alignment: center;
+}
+
+.coins-label {
+    -fx-text-fill: -text-light;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 20px;
+    -fx-alignment: center;
+    -fx-padding: 0 5px;
+}
+
+.coin-display {
+    -fx-alignment: center;
+}
+
+.coin-icon {
+    -fx-text-fill: #FFD700;
+    -fx-font-size: 24px;
+    -fx-padding: 0 5px 0 0;
+}
+
+.coin-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.store-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+.item-card {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+    -fx-min-height: 150px;
+}
+
+.item-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 6);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.product-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.product-price {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ff4757;
+}
+
+.item-purchased {
+    -fx-background-color: #4CAF50;
+}
+
+.item-selected {
+    -fx-background-color: -selected-color;
+}
+
+.hanger-icon {
+    -fx-font-size: 32px;
+    -fx-text-fill: #666666;
+    -fx-rotate: 180;
+}
+
+.hanger-active {
+    -fx-text-fill: white;
+}
+
+.price-tag {
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 15px;
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+
+.coin-icon-small {
+    -fx-text-fill: #FFD700;
+    -fx-font-size: 16px;
+}
+
+.coin-active {
+    -fx-text-fill: -coin-color;
+}
+
+.coin-brown {
+    -fx-text-fill: -accent-color;
+}
+
+.price-value {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Transiciones */
+* {
+    -fx-transition-duration: 0.2s;
+}
+
+.root {
+    -fx-background-color: #45C6D3;
+    -fx-font-family: "Arial";
+}
+
+.top-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px;
+    -fx-spacing: 15px;
+}
+
+.profiles-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 10px;
+}
+
+.logo-box {
+    -fx-background-color: black;
+    -fx-background-radius: 15px;
+    -fx-padding: 8px 15px;
+}
+
+.swarmp-label {
+    -fx-text-fill: #FFFF00;
+    -fx-font-weight: bold;
+    -fx-font-size: 28px;
+}
+
+.profiles-container {
+    -fx-padding: 50px 20px 20px 20px;
+    -fx-alignment: center;
+}
+
+.profile-box {
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+    -fx-max-width: 160px;
+    -fx-min-height: 140px;
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+
+/* Agregar animaciones */
+.profile-box:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.profile-icon-container {
+    -fx-background-color: #E5E5E5;
+    -fx-background-radius: 10px;
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-max-width: 100px;
+    -fx-max-height: 100px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+.profile-icon {
+    -fx-background-image: url("../images/profile-placeholder.png");
+    -fx-background-size: 60px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.profile-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.add-button {
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+    -fx-max-width: 100px; 
+    -fx-max-height: 100px;
+    -fx-cursor: hand;
+}
+
+.add-circle {
+    -fx-fill: #1D5B58;
+}
+
+.plus-label {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+
+/* Modo oscuro */
+.root.dark-mode {
+    -fx-background-color: #2C3E50;
+}
+
+.menu-button {
+    -fx-background-color: #45C6D3;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30 30 30 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: derive(#45C6D3, 10%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 2, 2);
+    -fx-translate-y: -1px;
+}
+
+.menu-button:pressed {
+    -fx-background-color: derive(#45C6D3, -10%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 1, 1);
+    -fx-translate-y: 1px;
+}
+
+/* Botón negro (Inicio) */
+.menu-button-black {
+    -fx-background-color: #2C3E50;
+}
+
+.menu-button-black:hover {
+    -fx-background-color: derive(#2C3E50, 20%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 2, 2);
+    -fx-translate-y: -1px;
+}
+
+/* Botón gris (Perfil) */
+.menu-button-gray {
+    -fx-background-color: #7F8C8D;
+}
+
+.menu-button-gray:hover {
+    -fx-background-color: derive(#7F8C8D, 20%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 2, 2);
+    -fx-translate-y: -1px;
+}
+
+/* Botón morado (Salir) */
+.menu-button-purple {
+    -fx-background-color: #8E44AD;
+}
+
+.menu-button-purple:hover {
+    -fx-background-color: derive(#8E44AD, 20%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 2, 2);
+    -fx-translate-y: -1px;
+}
+
+.main-background {
+    -fx-background-color: #40bcd8;
+}
+
+.form-background {
+    -fx-fill: #00a2ff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 4);
+}
+
+.form-container {
+    -fx-padding: 20px;
+}
+
+.form-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 20 0;
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.form-input {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.form-button {
+    -fx-background-color: #ff4757;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 40px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-margin: 10px 0;
+}
+
+.form-button:hover {
+    -fx-background-color: derive(#ff4757, 10%);
+}
+
+.form-text {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.form-link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffeb3b;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.form-link-button:hover {
+    -fx-text-fill: derive(#ffeb3b, 20%);
+}
+
+/* Estilos para las alertas */
+.dialog-pane {
+    -fx-background-color: #40bcd8;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #00a2ff;
+    -fx-padding: 20px;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20px;
+}
+
+.dialog-pane .content .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .container {
+    -fx-background-color: #40bcd8;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #ff4757;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: derive(#ff4757, 10%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+/* Estilos para el diálogo de compra */
+.dialog-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+    -fx-min-width: 300px;
+    -fx-min-height: 200px;
+}
+
+.dialog-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.dialog-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.dialog-price {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff4757;
+}
+
+.dialog-balance {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.dialog-button-buy {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+}
+
+.dialog-button-cancel {
+    -fx-background-color: #ff4757;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+}
+
+.price-container {
+    -fx-background-color: rgba(0,0,0,0.05);
+    -fx-padding: 10px;
+    -fx-background-radius: 5px;
+}
